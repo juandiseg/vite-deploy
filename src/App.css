@@ -1,0 +1,144 @@
+.buttonTower {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+.startButton{
+    padding-top: 10px;
+    width: 120px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+.header, .paragraph1, .buttonTower .startButton{
+    color: black;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+.test { 
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.canvas{
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  .row:after {
+    content: "";
+    display:table;
+    clear: both;
+  }
+
+  .row{
+    padding-left: 20%;
+    justify-content: center;
+  }
+.optButtom, .startButton{
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 100%;
+  }
+  
+.optButtom:hover,
+.optButtom:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+  
+.optButtom:hover {
+    transform: translateY(-1px);
+  }
+  
+.optButtom:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+  }
+
+
+.paragraph1{
+    padding: 0%;
+}
+
+.header {
+    text-align: center;
+}
+
+
+.h1{
+    text-align: center;
+    color: blue;
+}
+
+.towerButtonsDiv{
+    margin: 0 1px;
+    text-align:center;
+    border: 3px solid green;
+
+}
+
+.buttonTower {
+    background-color: black;
+    transition-duration: 0.4s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 10%;
+    border: 3px solid green;
+  }
+  
+.buttonTower:hover {
+    background-color: #04AA6D; /* Green */
+    color: white;
+}
+
+.majorDiv{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
