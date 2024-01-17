@@ -1,4 +1,3 @@
-import CircularProgress from '@mui/material/CircularProgress';    
 import MonsterWrapper from './util/Wrappers/MonsterWrapper'
 import ShotWrapper from './util/Wrappers/ShotWrapper'
 import RegularTower from "./util/Towers/RegularTower"
@@ -26,8 +25,8 @@ function App() {
   const pathColor:string = "brown"  
   
   // CANVAS
-  const canvasRef = useRef(null)
-  const ctxRef = useRef(null)
+  const canvasRef = useRef<any>(null)
+  const ctxRef = useRef<any>(null)
 
   // TOWER PICKING
   const towers = [new RegularTower(50, 28), new FireTower(100, 50), new IceTower(200, 7)]
@@ -78,15 +77,17 @@ function App() {
   // Is executed once, during the FIRST LOAD.
   useEffect(() => {
     const canvas = canvasRef.current; 
-    const ctx = canvas.getContext("2d"); 
-    ctxRef.current = ctx;
-    drawBackground(ctx)
+    if(canvas != null){
+      const ctx = canvas.getContext("2d"); 
+      ctxRef.current = ctx;
+      drawBackground(ctx)
+    }
   },[])
 
 
   // GENERAL GAME LOOP. Invoked when there are changes to game or time.
   useEffect(() => {
-    if(gameStarted && isAlive){
+    if(gameStarted && isAlive && canvasRef.current != null){
       const ctx = canvasRef.current.getContext('2d');
       if(wave == false && aliveMonsters.getMonsters().length == 0){
         if(framesUntilNextWave-1 <= 20){
@@ -299,13 +300,14 @@ function App() {
 
     // HANDLING CLICKING ON CANVAS
 
-  const clickListener = (e) => {
+  const clickListener = (e : any) => {
     const coordinates = computePointInCanvas(e.clientX, e.clientY)
     if( coordinates != null &&
       !coordinatesInPath(coordinates.y) &&
       !coordinatesOutOfBounds(coordinates) &&
-      gold >= pickedTower.getCost()
+      gold >= pickedTower.getCost() && canvasRef.current != null
     ){
+
       const ctx = canvasRef.current.getContext('2d');
       let temp:PlayedTower = new PlayedTower(pickedTower, coordinates)
       setGold(gold-pickedTower.getCost())
